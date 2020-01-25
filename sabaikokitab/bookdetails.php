@@ -62,63 +62,27 @@
         height: 30px;
         border-radius: 20px;
     }
+    .discription{
+      display: block;
+      font-size: 25px;
+      float: left;
+      margin: 200px 0 0 5px;
+      color: #000;
 
-     #content-wrapper{
-      clear: both;
-      width: auto;
-      margin: 0 30px;
-      text-align: center;
-     }
-     h4{
-       font-size: 50px;
-       padding: -20px;
-     }
-     .block
-     {
-       width: 200px;
-       height: 270px;
-       border: 3px double black;
-       margin: 0px;
-       padding: 5px;
-       background-color: lightyellow;
-       float: left;
-     }
-
-     .block .imag
-     {
-       height: 100px;
-       width: 100px;
-       border: 1px black solid;
-       text-align: center;;
-       text-shadow: 2px 2px #ff0000;
-       text-align: center;
-       background-color: white;
-     }
+    }
+    .discription p{
+      font-size: 30px;
+      text-decoration: underline;
+      font-weight: bold;:
+    }
      #about{
        display: block;
-       margin:480px auto 30px;
+       margin:680px auto 30px;
        background-color: #111;
        text-align:  center;
        font-size: 22px;
        color: #eee;
      }
-     .book_detail{
-       font-size: 30px;
-       color:#eee;
-       display: block;
-       padding: 5px;
-       margin:20px; auto;
-       border-collapse: collapse;
-       align-items: center;
-     }
-
-.book_detail, th, td {
-  text-align: center;
-  border: 1px solid #eee;
-}
-tr:hover {
-  background-color: #90EE90;
-}
 
 </style>
 <div class="headers">
@@ -136,20 +100,63 @@ tr:hover {
         </div>
           </nav>
 </div>
-	<?php
+<div class="discription">
+  <p>Book Name:</p>
+  <?php
 	$click=$_GET['id'];
 	$connection=mysqli_connect("localhost","root","","sabaikokitab");
 	$query ="select * from booksinfo where bookid='$click'";
 	$result=mysqli_query($connection,$query);
-	 ?>
-</style>
-
-
-		<?php while($row=mysqli_fetch_assoc($result))
+  while($row=mysqli_fetch_assoc($result))
 		{
 
+      echo $row['bookname'];
     }
-		 ?>
+      ?>
+ <br>
+
+    <p>Author Name:</p>
+      <?php
+    	$click=$_GET['id'];
+    	$connection=mysqli_connect("localhost","root","","sabaikokitab");
+    	$query ="select * from booksinfo where bookid='$click'";
+    	$result=mysqli_query($connection,$query);
+      while($row=mysqli_fetch_assoc($result))
+    		{
+
+          echo $row['author'];
+        }
+          ?>
+ <br>
+          <p>ISBN No.:</p>
+          <?php
+        	$click=$_GET['id'];
+        	$connection=mysqli_connect("localhost","root","","sabaikokitab");
+        	$query ="select * from booksinfo where bookid='$click'";
+        	$result=mysqli_query($connection,$query);
+          while($row=mysqli_fetch_assoc($result))
+        		{
+
+              echo $row['isbnno'];
+            }
+              ?>
+ <br>
+              <p>Publication:</p>
+              <?php
+            	$click=$_GET['id'];
+            	$connection=mysqli_connect("localhost","root","","sabaikokitab");
+            	$query ="select * from booksinfo where bookid='$click'";
+            	$result=mysqli_query($connection,$query);
+              while($row=mysqli_fetch_assoc($result))
+            		{
+
+                  echo $row['publication'];
+                }
+                  ?>
+
+</div>
+
+
 
 <br>
   <footer id="about">

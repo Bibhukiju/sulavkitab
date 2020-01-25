@@ -7,10 +7,10 @@
    }
  body
   {
-
-      background-image:url(try.jpg);
-      background-repeat: no-repeat;
-      background-size:  1920px 750px ;
+    background-image:url(try.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size:  1920px 750px ;
   }
  #icon
  {
@@ -91,10 +91,10 @@
  }
  #about{
    display: block;
-   margin:310px auto 10px;
-   background-color: #111;
+   margin:510px auto 20px;
+   background-color: #eee;
    text-align:  center;
-   font-size: 22px;
+   font-size: 232px;
    color: #eee;
  }
  </style>
@@ -145,6 +145,7 @@ if(isset($_POST['search']))
         Bookname:<?php echo $row['bookname']."<br>";?>
         Orginalprice:<?php echo $row['orgprice']."<br>";?>
         Price:<?php echo $row['myprice']."<br>";?>
+        <a href="bookdetails.php?id=<?php echo $row['bookid']?>">buy</a>
         <hr>
       </div>
     </div>
@@ -153,9 +154,10 @@ if(isset($_POST['search']))
 }
 }
  ?>
- <footer id="about">
-   <p>Team Nmae:ByteMe</p>
+ <br>
+ <div id="about">
+   <p>Team Name:ByteMe</p>
    <p>Contact Number: 9809736256, 986985732, 986398282, 9867324666  </p>
    <pre><p> <u>E-mail:</u><br> <a href="Radilkoju7@gmail.com">Radilkoju7@gmail.com</a> <br> <a href="Rikeshsibanjar380@gmail.com">Rikeshsibanjar380@gmail.com</a> <br> <a href="Bibhukiju@gmail.com">Bibhukiju@gmail.com</a> <br> <a href="SanamGC56@gmail.com">SanamGC56@gmail.com</a> </p></pre>
 
- </footer>
+ </div>

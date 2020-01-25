@@ -1,3 +1,10 @@
+
+<html >
+
+
+
+
+
 <div class="headers">
 <a href="index.html"><img src="icon.png" id="icon"></a>
     <nav>
@@ -13,9 +20,20 @@
         </div>
           </nav>
 </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <?php
 $connection=mysqli_connect("localhost","root","","sabaikokitab");
-$query="SELECT * FROM `booksinfo`";
+$query="SELECT * FROM `booksinfo` ";
 $result=mysqli_query($connection,$query);
 ?>
 <section class="diki">
@@ -31,16 +49,18 @@ $result=mysqli_query($connection,$query);
         Bookname:<?php echo $row['bookname']."<br>";?>
         Orginalprice:<?php echo $row['orgprice']."<br>";?>
         Price:<?php echo $row['myprice']."<br>";?>
+        <a class="detail" href="bookdetails.php?id=<?php echo $row['bookid']?>">Book Details</a>
         <hr>
         <center>  <input type="submit" name="buy" value="Buy" id="buy"></center>
       </div>
+
 </section>
 <?php
 }
 ?>
 <br>
 <footer id="about">
-  <p>Team Nmae:ByteMe</p>
+  <p>Team Name:ByteMe</p>
   <p>Contact Number: 9809736256, 986985732, 986398282, 9867324666  </p>
   <pre><p> <u>E-mail:</u><br> <a href="Radilkoju7@gmail.com">Radilkoju7@gmail.com</a> <br> <a href="Rikeshsibanjar380@gmail.com">Rikeshsibanjar380@gmail.com</a> <br> <a href="Bibhukiju@gmail.com">Bibhukiju@gmail.com</a> <br> <a href="SanamGC56@gmail.com">SanamGC56@gmail.com</a> </p></pre>
 
@@ -52,10 +72,10 @@ html
   }
 body
  {
-
-     background-image:url(try.jpg);
-     background-repeat: repeat-y;
-     background-size:  1920px 750px ;
+   background-image:url(try.jpg);
+   background-attachment: fixed;
+   background-repeat: no-repeat;
+   background-size:  1920px 750px ;
  }
 
 #icon
@@ -103,10 +123,11 @@ form
     height: 30px;
     border-radius: 20px;
 }
+.detail{
+  color: Black;
+}
 section{
-  display: table;
-  margin-left: auto;
-  width:100%;
+
 
 }
 .block
@@ -157,3 +178,5 @@ section{
 
 }
 </style>
+
+</html>

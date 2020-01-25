@@ -6,6 +6,7 @@ html
 body
 {
   background-image:url(try.jpg);
+  background-attachment: fixed;
   background-repeat: no-repeat;
   background-size:  1920px 750px ;
 }
@@ -54,13 +55,14 @@ form
   border-radius: 20px;
   border-color: blue;
   background-color: lightyellow;
-  font-size: 50px;
+  font-size: 30px;
 
 }
 input[type="text"]
 {
     width: 100%;
     height: 50px;
+    padding:1px;
     text-align: center;
     margin: 0%;
     border-radius: 20px;
@@ -108,26 +110,25 @@ input[type="submit"]
 <form class="screen" action="upload.php" method="post">
   <fieldset>
     <legend>Bookinfo</legend>
-    <br>
     <fieldset>
       <legend>Book name</legend>
       <input type="text" name="bookname" placeholder="Name of the book">
     </fieldset>
     <fieldset>
-      <legend>Orginalprice</legend>
-      <input type="text" name="orgprice" placeholder="Orginalprice of the book">
-    </fieldset>
-    <!--<fieldset>
-      <legend>Your price</legend>
-      <input type="text" name="myprice" placeholder="Your price for the book">
-    </fieldset>-->
-    <fieldset>
       <legend>Author</legend>
       <input type="text" name="author" placeholder="Author of the book">
     </fieldset>
+    <fieldset>
+      <legend>ISBN No.</legend>
+      <input type="text" name="ISBN" placeholder="ISBN No.">
+    </fieldset>
+    <fieldset>
+      <legend>Publication</legend>
+      <input type="text" name="Publication" placeholder="Publication">
+    </fieldset>
   </fieldset>
 
-<br><br>
+<br>
 <center>
 <input type="submit" id="donate" name="donate" value="DONATE">
 </center>
@@ -136,19 +137,20 @@ input[type="submit"]
 <?php
 
 
-if(isset($_POST['upload']))
+if(isset($_POST['donate']))
 {
   $bookname=$_POST['bookname'];
-  $orgprice=$_POST['orgprice'];
-  $myprice=$_POST['myprice'];
+  $isbn=$_POST['ISBN'];
+  $publication=$_POST['Publication'];
+  $author=$_POST['author'];
   $connection=mysqli_connect("localhost","root","","sabaikokitab");
-  $query="INSERT INTO `bookinfo` (bookname, orgprice, myprice) VALUES ('$bookname', '$orgprice', '$myprice')";
+$query="INSERT INTO `booksinfo` (bookname,isbnno, author, publication) VALUES ('$bookname','$isbn','$author','$publication')";
   mysqli_query($connection,$query);
 }
  ?>
 
  <footer id="about">
-   <p>Team Nmae:ByteMe</p>
+   <p>Team Name:ByteMe</p>
    <p>Contact Number: 9809736256, 986985732, 986398282, 9867324666  </p>
    <pre><p> <u>E-mail:</u><br> <a href="Radilkoju7@gmail.com">Radilkoju7@gmail.com</a> <br> <a href="Rikeshsibanjar380@gmail.com">Rikeshsibanjar380@gmail.com</a> <br> <a href="Bibhukiju@gmail.com">Bibhukiju@gmail.com</a> <br> <a href="SanamGC56@gmail.com">SanamGC56@gmail.com</a> </p></pre>
 

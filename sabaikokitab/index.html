@@ -12,6 +12,7 @@
         {
 
             background-image:url(try.jpg);
+            background-attachment: fixed;
             background-repeat: no-repeat;
             background-size:  1920px 750px ;
         }
@@ -74,36 +75,13 @@
          	margin: 0 30px;
          	text-align: center;
          }
-         h4{
-           font-size: 50px;
-           padding: -20px;
-         }
-         .block
-         {
-           width: 200px;
-           height: 270px;
-           border: 3px double black;
-           margin: 0px;
-           padding: 5px;
-           background-color: lightyellow;
-           float: left;
-         }
 
-         .block .imag
-         {
-           height: 100px;
-           width: 100px;
-           border: 1px black solid;
-           text-align: center;;
-           text-shadow: 2px 2px #ff0000;
-           text-align: center;
-           background-color: white;
-         }
+
          #about{
            display: block;
-           margin:280px auto 30px;
+           margin:720px auto 30px;
            background-color: #111;
-           text-align:  center;
+           text-align: center;
            font-size: 22px;
            color: #eee;
          }
@@ -130,19 +108,6 @@
 Share  Books
 Share Knowledge
         </pre>
-    <div id="content-wrapper">
-        <h4>Latest Upload</h4>
-        <div class="block">
-          <br>
-          <center><img src="#" alt="image not found" class="imag"><br></center>
-          <br>
-          <hr>
-            Bookname:<?php echo $row['bookname']."<br>";?>
-            Orginalprice:<?php echo $row['orgprice']."<br>";?>
-            Price:<?php echo $row['myprice']."<br>";?>
-          </hr>
-          <center>  <input type="submit" name="buy" value="Buy" id="buy"></center>
-        </div>
     </div>
     <br>
     <footer id="about">
